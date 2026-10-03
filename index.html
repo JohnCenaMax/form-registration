@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <h1>Student Registration</h1>
+            <p class="intro">Complete the form below to register for the IT seminar.</p>
+
+            <form id="registrationForm" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        required
+                        autocomplete="name"
+                        aria-describedby="fullNameError"
+                    >
+                    <p id="fullNameError" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentNumber">Student Number</label>
+                    <input
+                        type="text"
+                        id="studentNumber"
+                        name="studentNumber"
+                        required
+                        placeholder="24-1234-123"
+                        pattern="[0-9]{2}-[0-9]{4}-[0-9]{3}"
+                        aria-describedby="studentNumberError"
+                    >
+                    <p id="studentNumberError" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                        aria-describedby="emailError"
+                    >
+                    <p id="emailError" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input
+                        type="tel"
+                        id="mobileNumber"
+                        name="mobileNumber"
+                        required
+                        placeholder="09171234567 or +639171234567"
+                        aria-describedby="mobileNumberError"
+                    >
+                    <p id="mobileNumberError" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                        autocomplete="new-password"
+                        aria-describedby="passwordError passwordFeedback"
+                    >
+                    <p id="passwordFeedback" class="feedback" aria-live="polite"></p>
+                    <p id="passwordError" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        required
+                        autocomplete="new-password"
+                        aria-describedby="confirmPasswordError"
+                    >
+                    <p id="confirmPasswordError" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select
+                        id="course"
+                        name="course"
+                        required
+                        aria-describedby="courseError"
+                    >
+                        <option value="">Select your course</option>
+                        <option value="BSIT">BSIT</option>
+                        <option value="BSCS">BSCS</option>
+                    </select>
+                    <p id="courseError" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="checkbox-group">
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required
+                        aria-describedby="termsError"
+                    >
+                    <label for="terms">I agree to the terms and conditions.</label>
+                </div>
+                <p id="termsError" class="error" aria-live="polite"></p>
+
+                <div class="buttons">
+                    <button type="submit" id="registerBtn">Register</button>
+                    <button type="reset" id="resetBtn" class="secondary">Reset</button>
+                </div>
+            </form>
+
+            <div id="successMessage" class="success" hidden aria-live="polite"></div>
+
+            <section id="registrationSummary" class="summary" hidden aria-labelledby="summaryHeading">
+                <h2 id="summaryHeading">Registration Summary</h2>
+
+                <dl>
+                    <div>
+                        <dt>Full Name</dt>
+                        <dd id="summaryName"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Student Number</dt>
+                        <dd id="summaryStudentNumber"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Email</dt>
+                        <dd id="summaryEmail"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Mobile Number</dt>
+                        <dd id="summaryMobileNumber"></dd>
+                    </div>
+
+                    <div>
+                        <dt>Course</dt>
+                        <dd id="summaryCourse"></dd>
+                    </div>
+                </dl>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
